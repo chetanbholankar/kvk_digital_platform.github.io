@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit of Dr. Shakir Ali - KVK Jalgaon Jamod</title>
+  <link rel="stylesheet" href="event5.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  h1 {
+    background-color: white;
+    color: #3f7d20;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  
+  .intro, .details, .gallery {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .intro img {
+    width: 30%;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+  }
+  
+  .details h2 {
+    color: #3f7d20;
+    margin-top: 1.5rem;
+  }
+  
+  .details ul {
+    padding-left: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .gallery h2 {
+    color: #3f7d20;
+    margin-bottom: 1rem;
+  }
+  
+  .gallery .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .gallery img {
+    width: 32%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .gallery img {
+      width: 100%;
+    }
+  
+    .intro img {
+      width: 80%;
+    }
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  header {
+    background-color: #3f7d20;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  .btn {
+    background-color: #3f7d20;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #2e5e14;
+    color: white;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    background-color: #3f7d20;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links > li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #3f7d20;
+    color: #ffffff;
+  }
+  
+  /* Dropdown menu */
+  .drop-down {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0 0 6px 6px;
+    z-index: 1000;
+  }
+  
+  .drop-down li a {
+    padding: 12px 16px;
+    color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .drop-down li:last-child a {
+    border-bottom: none;
+  }
+  
+  .nav-link:hover .drop-down {
+    display: block;
+  }
+  
+  /* Optional: add smooth animation */
+  .drop-down {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .nav-link:hover .drop-down {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Navbar Events */
+  
+  /* Base nav-link styling */
+  .nav-link {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .nav-link > a {
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  color: #fff;
+  background-color: #3f7d20;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  }
+  
+  .nav-link > a:hover {
+  background-color: #1abc9c;
+  }
+  
+  /* Dropdown menu */
+  .drop-down {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 0;
+  display: none;
+  min-width: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  }
+  
+  .nav-link:hover .drop-down {
+  display: block;
+  }
+  
+  /* Dropdown items */
+  .drop-down li {
+  list-style: none;
+  margin: 0;
+  }
+  
+  .drop-down a {
+  display: block;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .drop-down a:hover {
+  background-color: #f7f7f7;
+  color: #1abc9c;
+  }
+  
+  /* Optional: Remove last border */
+  .drop-down li:last-child a {
+  border-bottom: none;
+  }
+  
+  .nav-links a:hover {
+  background-color: #3f7d20;
+  color: #ffffff;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #3f7d20;
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .pdf-download {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .pdf-download button {
+    background-color: #3f7d20;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .pdf-download button:hover {
+    background-color: #3f7d20;
+  }
+  
+
+
+
+
+  /* Nav-link base */
+.nav-link {
+  position: relative;
+}
+
+/* Connect button */
+.nav-link > a {
+  background-color: #3f7d20; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link > a:hover {
+  background-color: #2e5e14; /* Darker green on hover */
+}
+
+/* Dropdown */
+.drop-down {
+  display: none;
+  position: absolute;
+  top: 110%; /* slightly below the Connect button */
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.nav-link:hover .drop-down {
+  display: block;
+}
+
+/* Dropdown items */
+.drop-down li {
+  list-style: none;
+}
+
+.drop-down li a.btn {
+  display: block;
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+
+/* Remove last border */
+.drop-down li:last-child a.btn {
+  border-bottom: none;
+}
+
+/* Hover effects on dropdown items */
+.drop-down li a.btn:hover {
+  background-color: #2e5e14;
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"> 
+        <a href="home.html"><img src="image/Kvk logo1.png" alt="KVK Logo"></a>KVK Buldhana 1
+      </div>
+    <ul class="nav-links">
+      <li class="nav-link">
+        <a href="kvk.html">Home</a>
+      </li>
+      <li class="nav-link">
+        <a href="#about">About</a>
+        <ul class="drop-down">
+          <li><a href="mandates.html">Mandate of KVK</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="operational.html">Operational area</a></li>
+          <li><a href="silent.html">Silent features of Buldhana District</a></li>
+        </ul>
+      </li>
+      <li class="nav-link">
+        <a href="#activities">Activities</a>
+        <ul class="drop-down">
+          <li><a href="training.html">Training Programs</a></li>
+          <li><a href="front.html">Front Line Demonstration</a></li>
+          <li><a href="on farm.html">On Farm Testing</a></li>
+          <li><a href="extension.html">Extension Activities</a></li>
+        </ul>
+      </li>
+      <li class="nav-link">
+        <a href="#events">Events</a>
+        <ul class="drop-down">
+          <li><a href="event1.html">Agriculture Exhibition SATPUDA AGROTECH-2023</a></li>
+          <li><a href="event2.html">Scientific Advisory Committee Meeting</a></li>
+          <li><a href="event3.html">Visit of ICAR Scientist to KVK</a></li>
+          <li><a href="event4.html">Skill Development Training Under ASCI</a></li>
+          <li><a href="event5.html">Visit of Hon. Dr. Shakir Ali, Principal Scientist, ICAR-ATARI, Pune</a></li>
+          <li><a href="event6.html">Celebration of Agriculture Technology Week</a></li>
+        </ul>
+      </li>
+      <li class="nav-link">
+        <a href="insightus.html">Insight US</a>
+      </li>
+      <li class="nav-link">
+        <a href="#Connect">Connect</a>
+        <ul class="drop-down">
+          <li> <a href="#Contact Us" class="btn">Contact Us</a></li>
+          <li> <a href="login.html" class="btn">Login</a></li>
+
+        </ul> 
+      </li>
+    </ul>
+  </header>
+    <h1>Visit of Hon. Dr. Shakir Ali</h1>
+    
+
+  <section class="intro">
+    <img src="image/Dr Syed Shakir Ali.jpeg" alt="Dr. Shakir Ali Visit" />
+    <p>On September 21, 2024, Dr. Syed Shakir Ali, Principal Scientist at ICAR-ATARI, Pune, visited Krishi Vigyan Kendra (KVK) Buldana-I, near Jalgaon Jamod. The visit aimed at evaluating initiatives and guiding future strategies in agricultural outreach.</p>
+  </section>
+
+  <section class="details">
+    <h2>🧭 Purpose of the Visit</h2>
+    <p>The visit focused on reviewing KVK Buldana-I's ongoing programs and integrating advanced technologies for farmer benefit.</p>
+
+    <h2>🔍 Key Activities</h2>
+    <ul>
+      <li><strong>Facility Tour:</strong> Covered demonstration plots, training centers, and other resources.</li>
+      <li><strong>Stakeholder Interaction:</strong> Discussions with KVK staff and farmers about regional challenges.</li>
+      <li><strong>Strategic Discussions:</strong> Focused on sustainability and tech dissemination.</li>
+    </ul>
+
+    <h2>✅ Outcomes</h2>
+    <p>Dr. Ali praised KVK Buldana-I’s efforts and encouraged innovation and farmer-centric practices to boost agriculture extension services.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>📸 Visit Highlights</h2>
+    <div class="images">
+      <img src="image/Touring.jpg" alt="Touring the facility">
+      <img src="image/staff.jpg" alt="Discussion with staff">
+      <img src="image/addressing.jpg" alt="Addressing farmers">
+    </div>
+  </section>
+  <div class="pdf-download">
+    <button onclick="window.print()">📄 Download PDF</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 KVK Jalgaon Jamod | Infrastructure Facilities</p>
+  </footer>
+</body>
+</html>

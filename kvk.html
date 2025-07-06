@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVK Webpage</title>
+    <link rel="stylesheet" href="kvk.css">
+    <style>
+      body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: #3f7d20;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  border-bottom: 2px solid white;
+}
+
+.btn {
+  background-color: #3f7d20;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #2e5e14;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Events */
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 220px;
+  max-width: 220px;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px;
+  color: #3f7d20;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}  
+
+/* History*/
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.8;
+  padding: 40px 20px;
+}
+
+/* Main container */
+.info-section {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Block styling for History and Achievements */
+.info-block {
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #e8f5e9; /* Light green background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Achievements specific background */
+.achievements {
+  background-color: #e0f7fa; /* Light blue background */
+}
+
+/* Green header box */
+.info-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Icon */
+.info-header img {
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+}
+
+/* Title inside green box */
+.info-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.info-block p {
+  font-size: 17px;
+  color: #444;
+  text-align: justify;
+}
+
+.info-header {
+  display: inline-flex; /* Changed from flex to inline-flex */
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: white;
+  max-width: 100%; /* Prevent overflow on smaller screens */
+}
+
+/* Experts*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.experts-section {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.kvk-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.experts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 10px;
+}
+
+.member {
+  background-color: #ecf0f1;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.member p {
+  font-size: 1rem;
+  color: #34495e;
+  margin: 0;
+}
+
+.green-box {
+  background-color: #e6f4ea; /* light green background */
+  border: 3px solid #2e7d32; /* dark green border */
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* KVK glance*/
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.glance-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.explore-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #555;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.info-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #45a049;
+}
+
+.green-heading {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 28px;
+  margin: 0;
+  display: inline-block;
+}
+
+/* Counter*/
+
+/* Reset and base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  background-color: #3f7d20;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+.nav-links a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #3f7d20;
+  color: #ffffff;
+}
+
+/* Dropdown menu */
+.drop-down {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 220px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 0 0 6px 6px;
+  z-index: 1000;
+}
+
+.drop-down li a {
+  padding: 12px 16px;
+  color: black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drop-down li:last-child a {
+  border-bottom: none;
+}
+
+.nav-link:hover .drop-down {
+  display: block;
+}
+
+/* Optional: add smooth animation */
+.drop-down {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-link:hover .drop-down {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Navbar Events */
+
+/* Base nav-link styling */
+.nav-link {
+position: relative;
+list-style: none;
+display: inline-block;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link > a {
+text-decoration: none;
+padding: 12px 20px;
+display: block;
+color: #fff;
+background-color: #3f7d20;
+border-radius: 4px;
+transition: background-color 0.3s ease;
+}
+
+.nav-link > a:hover {
+background-color: #1abc9c;
+}
+
+/* Dropdown menu */
+.drop-down {
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 6px;
+padding: 10px 0;
+display: none;
+min-width: 260px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+}
+
+.nav-link:hover .drop-down {
+display: block;
+}
+
+/* Dropdown items */
+.drop-down li {
+list-style: none;
+margin: 0;
+}
+
+.drop-down a {
+display: block;
+padding: 12px 18px;
+text-decoration: none;
+color: #333;
+font-size: 15px;
+line-height: 1.4;
+transition: background-color 0.3s ease;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.drop-down a:hover {
+background-color: #f7f7f7;
+color: #1abc9c;
+}
+
+/* Optional: Remove last border */
+.drop-down li:last-child a {
+border-bottom: none;
+}
+
+.nav-links a:hover {
+background-color: #3f7d20;
+color: #ffffff;
+}
+
+footer {
+background: #3f7d20;
+color: white;
+text-align: center;
+padding: 15px;
+margin-top: 40px;
+}
+
+.pdf-download {
+text-align: center;
+padding: 1rem;
+}
+
+.pdf-download button {
+background-color: #3f7d20;
+color: white;
+border: none;
+padding: 0.75rem 1.5rem;
+font-size: 1rem;
+border-radius: 8px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.pdf-download button:hover {
+background-color: #3f7d20;
+}
+
+/* Container of the whole navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3e821c; /* same green background */
+  padding: 10px 20px;
+}
+
+/* Logo and title wrapper */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styling */
+.navbar-left img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Title text */
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Navigation links container */
+.navbar-right {
+  display: flex;
+  gap: 30px;
+}
+
+/* Individual nav link */
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* Nav-link base */
+.nav-link {
+  position: relative;
+}
+
+/* Connect button */
+.nav-link > a {
+  background-color: #3f7d20; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link > a:hover {
+  background-color: #2e5e14; /* Darker green on hover */
+}
+
+/* Dropdown */
+.drop-down {
+  display: none;
+  position: absolute;
+  top: 110%; /* slightly below the Connect button */
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.nav-link:hover .drop-down {
+  display: block;
+}
+
+/* Dropdown items */
+.drop-down li {
+  list-style: none;
+}
+
+.drop-down li a.btn {
+  display: block;
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+
+/* Remove last border */
+.drop-down li:last-child a.btn {
+  border-bottom: none;
+}
+
+/* Hover effects on dropdown items */
+.drop-down li a.btn:hover {
+  background-color: #2e5e14;
+  color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo"> 
+            <a href="index.html"><img src="image/Kvk logo1.png" alt="KVK Logo"></a>KVK Buldhana 1
+          </div>
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="kvk.html">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="#about">About</a>
+            <ul class="drop-down">
+              <li><a href="mandates.html">Mandate of KVK</a></li>
+              <li><a href="location.html">Location</a></li>
+              <li><a href="operational.html">Operational area</a></li>
+              <li><a href="silent.html">Silent features of Buldhana District</a></li>
+            </ul>
+          </li>
+          <li class="nav-link">
+            <a href="#activities">Activities</a>
+            <ul class="drop-down">
+              <li><a href="training.html">Training Programs</a></li>
+              <li><a href="front.html">Front Line Demonstration</a></li>
+              <li><a href="on farm.html">On Farm Testing</a></li>
+              <li><a href="extension.html">Extension Activities</a></li>
+            </ul>
+          </li>
+          <li class="nav-link">
+            <a href="#events">Events</a>
+            <ul class="drop-down">
+              <li><a href="event1.html">Agriculture Exhibition SATPUDA AGROTECH-2023</a></li>
+              <li><a href="event2.html">Scientific Advisory Committee Meeting</a></li>
+              <li><a href="event3.html">Visit of ICAR Scientist to KVK</a></li>
+              <li><a href="event4.html">Skill Development Training Under ASCI</a></li>
+              <li><a href="event5.html">Visit of Hon. Dr. Shakir Ali, Principal Scientist, ICAR-ATARI, Pune</a></li>
+              <li><a href="event6.html">Celebration of Agriculture Technology Week</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-link">
+            <a href="insightus.html">Insight US</a>
+          </li>
+          <li class="nav-link">
+            <a href="#Connect">Connect</a>
+            <ul class="drop-down">
+              <li> <a href="#Contact Us" class="btn">Contact Us</a></li>
+              <li> <a href="login.html" class="btn">Login</a></li>
+    
+            </ul> 
+          </li>
+          
+        </ul>
+      </header>
+    <section id="home" class="hero">
+        <img src="image/KVK Building (1).jpeg" alt="KVK Building">
+    </section>
+
+    <section class="cards-container">
+        <div class="card">
+            <img src="image/Events.jpeg" alt="Events">
+            <h3>Events</h3>
+        </div>
+        <div class="card">
+            <img src="image/front line.jpeg" alt="Front Line Demonstration">
+            <h3>Front Line Demonstration</h3>
+        </div>
+        <div class="card">
+            <img src="image/on field training.jpeg" alt="On Field Training">
+            <h3>On Field Training</h3>
+        </div>
+        <div class="card">
+            <img src="image/training program.jpeg" alt="Training and Special Program">
+            <h3>Training & Special Program</h3>
+        </div>
+        <div class="card">
+            <img src="image/Report.jpeg" alt="Report">
+            <h3>Report</h3>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-block history">
+            <div class="info-header">
+                <img src="image/History logo.png" alt="History Icon">
+                <h2>History</h2>
+            </div>
+            <p>Krishi Vigyan Kendra has been sanctioned to Satpuda Education Society, Jalgaon Jamod, Buldana by Indian Council of Agriculture Research, New Delhi vide letter No.                           3-4/94-KVK-AEII dated 19.10.1994 for catering need based trainings to Practicing Farmers, Rural Youth and In-service Extension Functionaries, on-farm testing and Front Line Demonstration of different crops, which are grown in Buldana District.</p>
+        </div>
+    
+        <div class="info-block achievements">
+            <div class="info-header">
+                <img src="image/achievement.png" alt="Achievements Icon">
+                <h2>Achievements</h2>
+            </div>
+            <p><u>Training Programs</u>:- KVK Jalgaon Jamod has conducted numerous training sessions aimed at equipping farmers, farm women, and rural youth with modern agricultural techniques, thereby improving productivity and income.<br><br>
+
+                <u> Frontline Demonstrations (FLDs)</u>:- The center has implemented FLDs on various crops and technologies, showcasing improved practices directly in farmers' fields to encourage adoption. <br><br>
+                
+                <u>On-Farm Trials (OFTs)</u>:- By conducting OFTs, KVK Jalgaon Jamod assesses the performance of new technologies under local conditions, facilitating evidence-based recommendations to the farming community. <br><br>
+                
+                <u>Collaborative Projects</u>:- The KVK has partnered with various organizations and participated in government initiatives like the Jalyukta Shivar Abhiyan, contributing to water conservation and management efforts in the region. <br><br>
+                
+                <u> Publications and Outreach</u>:- Through newsletters and other publications, KVK Jalgaon Jamod disseminates valuable agricultural information, success stories, and updates on its activities to a broader audience.<br><br></p>
+        </div>
+    </section>
+
+    <section class="experts-section">
+        <div class="green-box">
+        <h2 class="section-title">
+            <img src="image/experts.jpeg" alt="KVK Logo" class="kvk-logo">
+            KVK Experts
+        </h2>
+        <div class="experts-container">
+            <div class="member">
+                <img src="image/Vikas Jadhao 1.jpeg" alt="Dr. Vikas G. Jadhao">
+                <p><strong>Dr. Vikas G. Jadhao</strong><br>Sr. Scientist & Head</p>
+            </div>
+            <div class="member">
+                <img src="image/Anil Gabhane.jpeg" alt="Dr. Anil T. Gabhane">
+                <p><strong>Dr. Anil T. Gabhane</strong><br>Subject Matter Specialist (PP)</p>
+            </div>
+            <div class="member">
+                <img src="image/Shyamsundar Borde.jpeg" alt="Dr. Shyam A. Borde">
+                <p><strong>Dr. Shyam A. Borde</strong><br>Subject Matter Specialist (Agri.Extension)</p>
+            </div>
+            <div class="member">
+                <img src="image/Sanjay Umale.jpeg" alt="Dr. Sanjay M. Umale">
+                <p><strong>Dr. Sanjay M. Umale</strong><br>Subject Matter Specialist (Agronomy)</p>
+            </div>
+            <div class="member">
+                <img src="image/Dr. Vinod Janotkar.jpeg" alt="Dr. Vinod S. Janotkar">
+                <p><strong>Dr. Vinod S. Janotkar</strong><br>Subject Matter Specialist (Vet. Science)</p>
+            </div>
+            <div class="member">
+                <img src="image/Shashank Datey.jpeg" alt="Dr. Shashank Datey">
+                <p><strong>Dr. Shashank Datey</strong><br>Subject Matter Specialist (Horticulture)</p>
+            </div>
+            <div class="member">
+                <img src="image/NItin Talokar.jpeg" alt="Dr. Nitin P. Talokar">
+                <p><strong>Dr. Nitin P. Talokar</strong><br>Subject Matter Specialist (Agriculture Engg)</p>
+            </div>
+            <div class="member">
+                <img src="image/Samadhan Bagade.jpeg" alt="Dr. Samadhan J. Bagade">
+                <p><strong>Dr. Samadhan J. Bagade</strong><br>Farm Manager</p>
+            </div>
+            <div class="member">
+                <img src="image/Yogesh Wakekar.jpeg" alt="Dr. Yogesh R. Wakekar">
+                <p><strong>Dr. Yogesh R. Wakekar</strong><br>Programme Asstt. Comp.</p>
+            </div>
+            <div class="member">
+                <img src="image/Pradip Raut.jpeg" alt="Dr. Pradip E. Raut">
+                <p><strong>Dr. Pradip E. Raut</strong><br>Office Suptd.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+            
+    <section class="glance-section">
+        <div class="header">
+            <h1 class="green-heading">KVK AT A GLANCE</h1>
+            
+          </div>
+          
+    
+        <div class="card-container">
+          <div class="info-card">
+            <div class="icon"><img src="image/farm logo.jpeg" alt="farm"></div>
+            <h2>KVK Farm</h2>
+            <p>KVK Instructional Farm. Total land: 20.59 ha. Area under building.</p>
+            <a href="kvkfarm.html" class="read-more">Read More...</a>
+          </div>
+    
+          <div class="info-card">
+            <div class="icon"><img src="image/demonstration logo.jpeg" alt="demo"></div>
+            <h2>Demonstration Unit</h2>
+            <p>For providing subsidiary business to rural youth and demonstration purpose, KVK have established various demonstration units.</p>
+            <a href="demonstration.html" class="read-more">Read More...</a>
+          </div>
+    
+          <div class="info-card">
+            <div class="icon"><img src="image/services.jpeg" alt="infra"></div>
+            <h2>Infrastructure</h2>
+            <p>Administrative Building, Farmers Hostel, Staff Quarters.</p>
+            <a href="infra.html" class="read-more">Read More...</a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon"><img src="image/letter logo.jpeg" alt="letter"></div>
+            <h2>KVK Letter News</h2>
+            <p>Administrative Building, Farmers Hostel, Staff Quarters.</p>
+            <a href="news.html" class="read-more">Read More...</a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon"><img src="image/services.jpeg" alt="services"></div>
+            <h2>Services</h2>
+            <p>Administrative Building, Farmers Hostel, Staff Quarters.</p>
+            <a href="services.html" class="read-more">Read More...</a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon"><img src="image/requirement logo.jpeg" alt="requirement"></div>
+            <h2>Requirements</h2>
+            <p>Administrative Building, Farmers Hostel, Staff Quarters.</p>
+            <a href="requirement.html" class="read-more">Read More...</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="pdf-download">
+        <button onclick="window.print()">📄 Download PDF</button>
+      </div>
+
+      <footer>
+        <p>&copy; 2025 KVK Jalgaon Jamod | Powered by kvkbuldana.com</p>
+      </footer>
+  
+            
+      </body>
+</html>
+

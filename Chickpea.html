@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FLD chickpea Crop</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background/Chickpea.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.527);
+      padding: 20px;
+      border-radius: 8px;
+      width: 600px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #3f7d20;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      width: 180px;
+      font-size: 15px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: 2px solid #3f7d20;
+      border-radius: 5px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: #3f7d20;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background-color: #35691a;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #3f7d20;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #35691a;
+    }
+
+    .sub-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <a href="FLD.html" class="back-btn">Back</a>
+    <h2>FLD (Chickpea)</h2>
+    <form id="cottonForm">
+
+      <div class="form-group">
+        <label for="Crop">Crop</label>
+        <input type="text" id="Crop" name="crop">
+      </div>
+
+      <div class="form-group">
+        <label for="area">Thematic Area (in acres)</label>
+        <input type="number" id="area" name="area">
+      </div>
+
+      <div class="form-group">
+        <label for="spacing">Technology Demonstrated</label>
+        <input type="number" id="spacing" name="spacing">
+      </div>
+
+      <div class="form-group">
+        <label for="production">Varity</label>
+        <input type="number" id="production" name="production">
+      </div>
+
+      <div class="form-group">
+        <label for="harvesting">No. of Farmers</label>
+        <input type="number" id="harvesting" name="harvesting">
+      </div>
+
+      <div class="form-group">
+        <label for="sowingTime">Area (ha)</label>
+        <input type="number" id="sowingTime" name="sowingTime">
+      </div>
+
+      <div class="form-group">
+        <label for="yieldType">Yield (kg/acre)</label>
+        <div class="sub-group">
+          <select id="yieldType" name="yieldType">
+            <option value="">Select Type</option>
+            <option value="demo">Demo</option>
+          </select>
+
+          <div id="demoFields" style="display:none; margin-top:5px;">
+            <input type="number" id="demoHigh" name="demoHigh" placeholder="Demo Yield - High">
+            <input type="number" id="demoLow" name="demoLow" placeholder="Demo Yield - Low">
+            <input type="number" id="demoAverage" name="demoAverage" placeholder="Demo Yield - Average">
+            <div style="margin-top:10px;">
+              <label><input type="checkbox" id="checkEnable">Check Yield</label>
+            </div>
+          </div>
+
+          <div id="checkFields" style="display:none; margin-top:5px;">
+            <input type="number" id="checkHigh" name="checkHigh" placeholder="Check Yield">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sowingTime">% Increase in Yield</label>
+        <input type="number" id="sowingTime" name="sowingTime">
+      </div>
+
+      <div class="form-group">
+        <label for="economicsSelect">Economics of demonstration (Rs./ha)</label>
+        <div class="sub-group">
+          <select id="economicsSelect" name="economicsSelect">
+            <option value="">Select Option</option>
+            <option value="add">Add Economics</option>
+          </select>
+
+          <div id="economicsFields" style="display: none; margin-top: 5px;">
+            <input type="number" id="grossCost" name="grossCost" placeholder="Gross Cost (Rs./ha)">
+            <input type="number" id="grossReturn" name="grossReturn" placeholder="Gross Return (Rs./ha)">
+            <input type="number" id="netReturn" name="netReturn" placeholder="Net Return (Rs./ha)">
+            <input type="number" id="bcr" name="bcr" placeholder="BCR (R/C)" step="0.01">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="economicsCheckSelect">Economics of check (Rs./ha)</label>
+        <div class="sub-group">
+          <select id="economicsCheckSelect" name="economicsCheckSelect">
+            <option value="">Select Option</option>
+            <option value="addCheck">Add Economics</option>
+          </select>
+
+          <div id="economicsCheckFields" style="display: none; margin-top: 5px;">
+            <input type="number" id="checkGrossCost" name="checkGrossCost" placeholder="Gross Cost (Rs./ha)">
+            <input type="number" id="checkGrossReturn" name="checkGrossReturn" placeholder="Gross Return (Rs./ha)">
+            <input type="number" id="checkNetReturn" name="checkNetReturn" placeholder="Net Return (Rs./ha)">
+            <input type="number" id="checkBcr" name="checkBcr" placeholder="BCR (R/C)" step="0.01">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('yieldType').addEventListener('change', function () {
+      const value = this.value;
+      const demoFields = document.getElementById('demoFields');
+      const checkFields = document.getElementById('checkFields');
+
+      if (value === 'demo') {
+        demoFields.style.display = 'block';
+        checkFields.style.display = 'none';
+      } else {
+        demoFields.style.display = 'none';
+        checkFields.style.display = 'none';
+      }
+    });
+
+    document.getElementById('checkEnable').addEventListener('change', function () {
+      document.getElementById('checkFields').style.display = this.checked ? 'block' : 'none';
+    });
+
+    document.getElementById('economicsSelect').addEventListener('change', function () {
+      document.getElementById('economicsFields').style.display = this.value === 'add' ? 'block' : 'none';
+    });
+
+    document.getElementById('economicsCheckSelect').addEventListener('change', function () {
+      document.getElementById('economicsCheckFields').style.display = this.value === 'addCheck' ? 'block' : 'none';
+    });
+
+    document.getElementById('cottonForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      let formDetails = '';
+      formData.forEach((value, key) => {
+        formDetails += `${key}: ${value}\n`;
+      });
+      alert("Form Submitted with the following details:\n\n" + formDetails);
+      setTimeout(() => {
+        window.location.href = "FLD.html";
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

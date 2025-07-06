@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KVK Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      display: flex;
+      width: 800px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .image-section {
+      flex: 1;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-section img {
+      width: 90%;
+      height: auto;
+    }
+
+    .form-section {
+      flex: 1;
+      background: linear-gradient(180deg, #a8e063, #56ab2f);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      background: url('profile-icon.png') no-repeat center/cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .toggle-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background: #ffffff33;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-buttons .active {
+      background: white;
+      color: #3f7d20;
+      font-weight: bold;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    form input, form select {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .login-btn {
+      background-color: #3f7d20;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .or-line {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons img {
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+
+    a.link {
+      color: white;
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    a.center-link {
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .message {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="image-section">
+      <img src="image/login.jpeg" alt="Scientist Working">
+    </div>
+    <div class="form-section">
+      <div class="profile-pic"></div>
+      <div class="toggle-buttons">
+        <button id="loginBtn" class="active">LOGIN</button>
+        <button id="signupBtn">SIGN-UP</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" style="display: flex;">
+        <select id="loginRole" required>
+          <option value="">Role</option>
+          <option value="admin">Admin</option>
+          <option value="employee">Employee</option>
+        </select>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <a href="#" id="forgotPasswordLink" class="link">Forgot Password?</a>
+        <button type="submit" class="login-btn">Log-in</button>
+        <div class="or-line">OR</div>
+        <div class="social-icons">
+          <img src="image/google.png" alt="Google Login">
+          <img src="image/facebook.webp" alt="Facebook Login">
+        </div>
+      </form>
+
+      <!-- Sign-up Form -->
+      <form id="signupForm">
+        <select id="signupRole" required>
+          <option value="">Role</option>
+          <option value="admin">Admin</option>
+          <option value="employee">Employee</option>
+        </select>
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <input type="email" id="signupEmail" placeholder="Email-ID" required>
+        <button type="submit" class="login-btn">Sign-up</button>
+        <div class="or-line">OR</div>
+        <div class="social-icons">
+          <img src="image/google.png" alt="Google Login">
+          <img src="image/facebook.webp" alt="Facebook Login">
+        </div>
+      </form>
+
+     <!-- Forgot Password Form -->
+<form id="forgotPasswordForm">
+  <input type="text" id="forgotUsername" placeholder="Enter your Username" required>
+  <input type="email" id="forgotEmail" placeholder="Registered Email ID" required>
+  <div id="newPasswordSection" style="display:none;">
+    <input type="password" id="newPassword" placeholder="Enter New Password" required>
+    <button type="button" id="updatePasswordBtn" class="login-btn">Update Password</button>
+  </div>
+  <button type="submit" id="verifyBtn" class="login-btn">Verify</button>
+  <a href="#" id="backToLogin" class="link center-link">Back to Login</a>
+  <div class="message" id="resetMessage">Enter username and email to reset your password.</div>
+</form>
+    </div>
+  </div>
+
+  <script>
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
+  const forgotForm = document.getElementById("forgotPasswordForm");
+  const forgotLink = document.getElementById("forgotPasswordLink");
+  const backToLogin = document.getElementById("backToLogin");
+  const resetMessage = document.getElementById("resetMessage");
+
+  // Hide forgot form and show login
+  function showLoginForm() {
+    loginForm.style.display = "flex";
+    signupForm.style.display = "none";
+    forgotForm.style.display = "none";
+    loginBtn.classList.add("active");
+    signupBtn.classList.remove("active");
+  }
+
+  // Show forgot form only
+  function showForgotForm() {
+    loginForm.style.display = "none";
+    signupForm.style.display = "none";
+    forgotForm.style.display = "flex";
+    loginBtn.classList.remove("active");
+    signupBtn.classList.remove("active");
+    resetMessage.textContent = "Enter username and email to reset password.";
+    document.getElementById("forgotUsername").value = "";
+    document.getElementById("forgotEmail").value = "";
+    document.getElementById("newPassword")?.remove(); // Remove old input if already added
+    document.getElementById("updatePasswordBtn")?.remove(); // Remove old button if any
+  }
+
+  loginBtn.addEventListener("click", showLoginForm);
+  signupBtn.addEventListener("click", () => {
+    loginForm.style.display = "none";
+    signupForm.style.display = "flex";
+    forgotForm.style.display = "none";
+    signupBtn.classList.add("active");
+    loginBtn.classList.remove("active");
+  });
+
+  forgotLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    showForgotForm();
+  });
+
+  backToLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    showLoginForm();
+  });
+
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("signupUsername").value;
+    const password = document.getElementById("signupPassword").value;
+    const email = document.getElementById("signupEmail").value;
+    const role = document.getElementById("signupRole").value;
+    localStorage.setItem(username, JSON.stringify({ password, email, role }));
+    alert("Account created successfully!");
+    showLoginForm();
+  });
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    const role = document.getElementById("loginRole").value;
+    const storedUser = JSON.parse(localStorage.getItem(username));
+    if (storedUser && storedUser.password === password && storedUser.role === role) {
+      alert("Login successful! Redirecting...");
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid credentials!");
+    }
+  });
+
+  forgotForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("forgotUsername").value;
+    const email = document.getElementById("forgotEmail").value;
+    const storedUser = JSON.parse(localStorage.getItem(username));
+
+    if (storedUser && storedUser.email === email) {
+      resetMessage.textContent = "Verified. Please enter new password below.";
+
+      // Add new password input field
+      const newPassInput = document.createElement("input");
+      newPassInput.type = "password";
+      newPassInput.id = "newPassword";
+      newPassInput.placeholder = "Enter New Password";
+      newPassInput.required = true;
+      forgotForm.insertBefore(newPassInput, backToLogin);
+
+      // Add update button
+      const updateBtn = document.createElement("button");
+      updateBtn.textContent = "Update Password";
+      updateBtn.className = "login-btn";
+      updateBtn.id = "updatePasswordBtn";
+      updateBtn.type = "button";
+      forgotForm.insertBefore(updateBtn, backToLogin);
+
+      // Disable form submit button
+      e.target.querySelector("button[type='submit']").disabled = true;
+
+      updateBtn.addEventListener("click", () => {
+        const newPassword = document.getElementById("newPassword").value;
+        storedUser.password = newPassword;
+        localStorage.setItem(username, JSON.stringify(storedUser));
+        alert("Password updated! Please login.");
+        showLoginForm();
+      });
+    } else {
+      resetMessage.textContent = "Username and email do not match.";
+    }
+  });
+</script>
+
+</body>
+</html>
